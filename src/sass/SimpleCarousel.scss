@@ -1,9 +1,14 @@
 ._simple-carousel {
-    display: block;
-    white-space: nowrap;
     overflow-x: hidden;
 
-    ._carousel-element {
-        display: inline-block;
+    .tray {
+        display: block;
+        white-space: nowrap;
+        will-change: transform;
+        transition: transform 1000ms linear;
+
+        ._carousel-element {
+            display: inline-block;
+        }
     }
 }
