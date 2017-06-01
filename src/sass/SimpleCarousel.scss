@@ -1,0 +1,9 @@
+._simple-carousel {
+    display: block;
+    white-space: nowrap;
+    overflow-x: hidden;
+
+    ._carousel-element {
+        display: inline-block;
+    }
+}

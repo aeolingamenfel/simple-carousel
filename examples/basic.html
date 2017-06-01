@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>Simple Carousel</title>
+
+        <style>
+            body {
+                padding: 0;
+                margin: 0;
+                font-family: sans-serif;
+            }
+
+            .carousel-element {
+                width: 50%;
+            }
+        </style>
+        <link rel="stylesheet" type="text/css" href="/dist/css/SimpleCarousel.css" />
+    </head>
+    <body>
+        <div id="carousel" class="carousel">
+            <div class="carousel-element">
+                <h1 class="title">Hello, world</h1>
+                <p>This is a carousel item</p>
+            </div>
+            <div class="carousel-element">
+                <h1 class="title">Hello, world</h1>
+                <p>This is a carousel item</p>
+            </div>
+            <div class="carousel-element">
+                <h1 class="title">Hello, world</h1>
+                <p>This is a carousel item</p>
+            </div>
+        </div>
+
+        <script src="/dist/js/SimpleCarousel.js"></script>
+        <script type="text/javascript">
+            (function() {
+                var carouselElement = document.getElementById("carousel");
+
+                SimpleCarousel.init(carouselElement);
+            })();
+        </script>
+    </body>
+</html>
