@@ -35,7 +35,7 @@ npm i --save a-simple-carousel
 
 Then import `SimpleCarousel` from that package:
 
-```
+```javascript
 import {SimpleCarousel} from "a-simple-carousel";
 ```
 
@@ -57,7 +57,7 @@ handled by the Carousel object when it is initalized.
 
 *Example:*
 
-```
+```html
 <div id="my-carousel">
     <div class="tray">
         <!-- carousel items go here -->
@@ -79,7 +79,7 @@ configuration object, which is documented [below](#options).
 
 *Creating a slider using the init method*
 
-```
+```javascript
 var carousel = SimpleCarousel.init({
     element: document.getElementById("my-carousel")
 });
@@ -87,7 +87,7 @@ var carousel = SimpleCarousel.init({
 
 *Creating a slider using the constructor*
 
-```
+```javascript
 var carousel = new SimpleCarousel.Carousel({
     selector: "#my-carousel"
 });
@@ -106,7 +106,7 @@ already *and* the Carousel is not at the end of its track.
 
 *Example:*
 
-```
+```javascript
 var carousel = SimpleCarousel.init({
     element: document.getElementById("my-carousel")
 });
@@ -122,7 +122,7 @@ already *and* the Carousel is not and the beginning of its track.
 
 *Example:*
 
-```
+```javascript
 var carousel = SimpleCarousel.init({
     element: document.getElementById("my-carousel")
 });
