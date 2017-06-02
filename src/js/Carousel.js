@@ -1,11 +1,11 @@
 export class Carousel {
 
-    constructor(element) {
-        this.element = element;
-        this.tray = this.element.querySelector(".tray");
+    constructor(config) {
+        this.element = config.element || document.querySelector(config.selector);
+        this.tray = config.traySelector || this.element.querySelector(".tray");
         this.children = this.tray.children;
-        this.movementIncrement = 100;
-        this.movementUnit = "%";
+        this.movementIncrement = config.movementIncrement || 100;
+        this.movementUnit = config.movementUnit || "%";
         this.currentMovement = 0;
         this.isAgainstLeftWall = false;
         this.isAgainstRightWall = false;

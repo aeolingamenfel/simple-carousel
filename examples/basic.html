@@ -60,7 +60,9 @@
                 var prevButton = document.getElementById("prev-button");
                 var nextButton = document.getElementById("next-button");
 
-                var carousel = SimpleCarousel.init(carouselElement);
+                var carousel = SimpleCarousel.init({
+                    element: carouselElement
+                });
 
                 prevButton.addEventListener("click", function(e) {
                     carousel.previous();
