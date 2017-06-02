@@ -160,3 +160,16 @@ Key: `movementUnit`
 
 The unit to be applied to the movement increment (see
 [movement increment](#movement-increment)). Accepts any valid CSS unit.
+
+### Tray Selector
+
+Required: No<br />
+Value: `String`<br />
+Default: `.tray`<br />
+Key: `traySelector`
+
+The CSS selector specifying the tray element. This selector is *relative to* the
+parent Carousel element.
+
+If you are not sure what the tray element is or what it is for, please see the
+[preparing the HTML](#preparing-the-html) section.
