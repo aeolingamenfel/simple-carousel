@@ -10,6 +10,8 @@ Major Features:
 ---
 
  - [Creating a Carousel](#creating-a-carousel)
+   - [Preparing the HTML](#preparing-the-html)
+   - [Initializing the Carousel](#initializing-the-carousel)
  - [API](#api)
    - [Carousel.next()](#carouselnext)
    - [Carousel.previous()](#carouselprevious)
@@ -20,6 +22,29 @@ Major Features:
    - [Movement Unit](#movement-unit)
 
 ## Creating a Carousel
+
+### Preparing the HTML
+
+A Carousel requires a small amount of specific HTML to work properly. Most
+notably, the carousel element requires that there be a "tray" element wrapping
+around the actual Carousel contents. By default, Simple Carousel looks for an
+element beneath the Carousel element with the class of `tray`, but this can be
+configured using the [tray selector option](#tray-selector).
+
+Otherwise, no styles or additional configuration need be added; the rest is
+handled by the Carousel object when it is initalized.
+
+*Example:*
+
+```
+<div id="my-carousel">
+    <div class="tray">
+        <!-- carousel items go here -->
+    </div>
+</div>
+```
+
+### Initializing the Carousel
 
 There are two ways to create a Carousel, both of which involves the global
 symbol `SimpleCarousel`. You can either use the `SimpleCarousel.init()` which
@@ -58,11 +83,31 @@ Moves the Carousel forward by one increment of distance (by default, one
 screen-length), assuming that that Carousel is not in the middle of moving
 already *and* the Carousel is not at the end of its track.
 
+*Example:*
+
+```
+var carousel = SimpleCarousel.init({
+    element: document.getElementById("my-carousel")
+});
+
+carousel.next();
+```
+
 ### Carousel.previous()
 
 Moves the Carousel backwards by one increment of distance (by default, one
 screen-length), assuming that the Carousel is not in the middle of moving
 already *and* the Carousel is not and the beginning of its track.
+
+*Example:*
+
+```
+var carousel = SimpleCarousel.init({
+    element: document.getElementById("my-carousel")
+});
+
+carousel.previous();
+```
 
 ## Options
 
