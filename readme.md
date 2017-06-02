@@ -33,7 +33,14 @@ First, get Simple Carousel from NPM:
 npm i --save a-simple-carousel
 ```
 
-Then import `SimpleCarousel` from that package:
+Next, you'll need to in some way include the CSS file into your build that is
+necessary for it to render right. You can *either* include the SASS file into
+your SASS build, found at `src/sass/SimpleCarousel.scss` (relative to the
+`SimpleCarousel` module), *or* you can just directly import the CSS file from
+`dist/css/SimpleCarousel.css` (again, relative to the module root).
+
+Once you have the CSS getting to the page, import `SimpleCarousel` from that
+package into your Javascript where needed:
 
 ```javascript
 import {SimpleCarousel} from "a-simple-carousel";
