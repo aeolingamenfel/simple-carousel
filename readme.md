@@ -9,6 +9,7 @@ Major Features:
 
 ---
 
+ - [Quickstart](#quickstart)
  - [Creating a Carousel](#creating-a-carousel)
    - [Preparing the HTML](#preparing-the-html)
    - [Initializing the Carousel](#initializing-the-carousel)
@@ -20,6 +21,26 @@ Major Features:
    - [Selector](#selector)
    - [Movement Increment](#movement-increment)
    - [Movement Unit](#movement-unit)
+
+## Quickstart
+
+*Note: this quickstart requires [webpack](https://webpack.js.org/) and
+[NPM](https://www.npmjs.com/)*
+
+First, get Simple Carousel from NPM:
+
+```
+npm i --save a-simple-carousel
+```
+
+Then import `SimpleCarousel` from that package:
+
+```
+import {SimpleCarousel} from "a-simple-carousel";
+```
+
+Then just follow the [Creating a Carousel](#creating-a-carousel) documentation
+below to get up and running.
 
 ## Creating a Carousel
 
