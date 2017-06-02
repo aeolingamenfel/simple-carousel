@@ -1,3 +1,115 @@
 # Simple Carousel
 
 A vanilla JS, performant, accessible implementation of a carousel UI element.
+
+Major Features:
+
+ - Vanilla JS: works with your build with no extra frameworks
+ - Performant: uses proper render layers to ensure high performance
+
+---
+
+ - [Creating a Carousel](#creating-a-carousel)
+ - [API](#api)
+ - [Options](#options)
+   - [Element](#element)
+   - [Selector](#selector)
+   - [Movement Increment](#movement-increment)
+   - [Movement Unit](#movement-unit)
+
+## Creating a Carousel
+
+There are two ways to create a Carousel, both of which involves the global
+symbol `SimpleCarousel`. You can either use the `SimpleCarousel.init()` which
+returns a Carousel instance, or you can instantiate the instance yourself using
+`SimpleCarousel.Carousel()` constructor.
+
+Either way, the `init()` method or the `Carousel()` constructor take the same
+configuration object, which is documented [below](#options).
+
+**Examples:**
+
+*Creating a slider using the init method*
+
+```
+var carousel = SimpleCarousel.init({
+    element: document.getElementById("my-carousel")
+});
+```
+
+*Creating a slider using the constructor*
+
+```
+var carousel = new SimpleCarousel.Carousel({
+    selector: "#my-carousel"
+});
+```
+
+## API
+
+Either calling the Carousel constructor or using the `init()` method will return
+a `Carousel` object, on which the below methods can be found.
+
+### Carousel.next()
+
+Moves the Carousel forward by one increment of distance (by default, one
+screen-length), assuming that that Carousel is not in the middle of moving
+already *and* the Carousel is not at the end of its track.
+
+### Carousel.previous()
+
+Moves the Carousel backwards by one increment of distance (by default, one
+screen-length), assuming that the Carousel is not in the middle of moving
+already *and* the Carousel is not and the beginning of its track.
+
+## Options
+
+Below are the options that can be passed to the `init()` method or the
+constructor to configure how the carousel works.
+
+The only required option is you *must* specify an element for the carousel to
+connect to, either via the `config.element` option or the `config.selector`
+option.
+
+### Element
+
+Required: Yes (if [Selector](#selector) option is not specified)<br />
+Value: `HTMLElement`
+Default: n/a<br />
+Key: `element`
+
+Used to specify the `HTMLElement` that the Carousel should connect to. Must be
+specified if no element selector is specified.
+
+### Selector
+
+Required: Yes (if [Element](#element) option is not specified)<br />
+Value: `String`
+Default: n/a<br />
+Key: `selector`
+
+The CSS selector specifying the element that the Carousel should connect to.
+Must be specified if no element selector is specified.
+
+### Movement Increment
+
+Required: No<br />
+Value: `Integer`<br />
+Default: `100`<br />
+Key: `movementIncrement`
+
+The increment of movement that the carousel moves every time that `next()` or
+`previous()` is called. This is based on the [movement unit](#movement-unit)
+setting, so for example, if the movement unit is set to `%` and the movement
+increment is set to `50`, then calling `next()` would move the slider `50%`
+to the left.
+
+### Movement Unit
+
+Required: No<br />
+Value: `String`<br />
+Default: `%`<br />
+Key: `movementUnit`
+
+The unit to be applied to the movement increment (see
+[movement increment](#movement-increment)). Accepts any valid CSS unit.
