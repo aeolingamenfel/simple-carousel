@@ -1,5 +1,5 @@
 {
-  "name": "simple-carousel",
+  "name": "a-simple-carousel",
   "version": "0.3.0",
   "description": "Simple, performant, vanilla JS carousel implementation",
   "main": "src/js/index.js",
