@@ -11,6 +11,8 @@ Major Features:
 
  - [Creating a Carousel](#creating-a-carousel)
  - [API](#api)
+   - [Carousel.next()](#carouselnext)
+   - [Carousel.previous()](#carouselprevious)
  - [Options](#options)
    - [Element](#element)
    - [Selector](#selector)
