@@ -32,14 +32,44 @@
                     <h1 class="title">Hello, world</h1>
                     <p>This is a carousel item</p>
                 </div>
+                <div class="carousel-element">
+                    <h1 class="title">Hello, world</h1>
+                    <p>This is a carousel item</p>
+                </div>
+                <div class="carousel-element">
+                    <h1 class="title">Hello, world</h1>
+                    <p>This is a carousel item</p>
+                </div>
             </div>
+        </div>
+        <div>
+            <center>
+                <button id="prev-button">
+                    &lt; Previous
+                </button>
+                <button id="next-button">
+                    Next &gt;
+                </button>
+            </center>
         </div>
 
         <script src="/dist/js/SimpleCarousel.js"></script>
         <script type="text/javascript">
-            var carouselElement = document.getElementById("carousel");
+            (function() {
+                var carouselElement = document.getElementById("carousel");
+                var prevButton = document.getElementById("prev-button");
+                var nextButton = document.getElementById("next-button");
 
-            var carousel = SimpleCarousel.init(carouselElement);
+                var carousel = SimpleCarousel.init(carouselElement);
+
+                prevButton.addEventListener("click", function(e) {
+                    carousel.previous();
+                }, false);
+
+                nextButton.addEventListener("click", function(e) {
+                    carousel.next();
+                }, false);
+            })();
         </script>
     </body>
 </html>

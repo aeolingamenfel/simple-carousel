@@ -1,3 +1,5 @@
+$simple-carousel_move-speed: 500ms !default;
+
 ._simple-carousel {
     overflow-x: hidden;
 
@@ -5,7 +7,7 @@
         display: block;
         white-space: nowrap;
         will-change: transform;
-        transition: transform 1000ms linear;
+        transition: transform $simple-carousel_move-speed linear;
 
         ._carousel-element {
             display: inline-block;
