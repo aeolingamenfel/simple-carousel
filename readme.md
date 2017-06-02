@@ -142,7 +142,7 @@ option.
 ### Element
 
 Required: Yes (if [Selector](#selector) option is not specified)<br />
-Value: `HTMLElement`
+Value: `HTMLElement`<br />
 Default: n/a<br />
 Key: `element`
 
@@ -152,7 +152,7 @@ specified if no element selector is specified.
 ### Selector
 
 Required: Yes (if [Element](#element) option is not specified)<br />
-Value: `String`
+Value: `String`<br />
 Default: n/a<br />
 Key: `selector`
 
