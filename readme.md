@@ -183,14 +183,8 @@ below.
 
 | Name | Key | Description |
 | --- | --- | --- |
-| Normal Mode | `normal` | This is the default mode. When active, causes the Carousel to move based on the
-set [Movement Increment](#movement-increment) and
-[Movement Unit](#movement-unit) options (or their defaults). |
-| Child Increment Mode | `child-increment` | When set, this mode causes the Carousel to ignore the
-[Movement Increment](#movement-increment) and [Movement Unit](#movement-unit)
-options, and instead move child-by-child. That is, that the Carousel will move
-based on each child's width. This is dynamically computed, so if children are
-different widths, or they change widths, that change will be accounted for. |
+| Normal Mode | `normal` | This is the default mode. When active, causes the Carousel to move based on the set [Movement Increment](#movement-increment) and [Movement Unit](#movement-unit) options (or their defaults). |
+| Child Increment Mode | `child-increment` | When set, this mode causes the Carousel to ignore the [Movement Increment](#movement-increment) and [Movement Unit](#movement-unit) options, and instead move child-by-child. That is, that the Carousel will move based on each child's width. This is dynamically computed, so if children are different widths, or they change widths, that change will be accounted for. |
 
 ### Movement Increment
 
