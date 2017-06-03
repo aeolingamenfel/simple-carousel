@@ -43,7 +43,7 @@ Once you have the CSS getting to the page, import `SimpleCarousel` from that
 package into your Javascript where needed:
 
 ```javascript
-import {SimpleCarousel} from "a-simple-carousel";
+import * as SimpleCarousel from "a-simple-carousel";
 ```
 
 Then just follow the [Creating a Carousel](#creating-a-carousel) documentation

@@ -12,7 +12,6 @@ export class Carousel {
         this.isMoving = false;
 
         this.upgrade();
-        this.computeStatus();
     }
 
     /**
@@ -36,11 +35,11 @@ export class Carousel {
 
     movementEnded(e) {
         this.isMoving = false;
-
-        this.computeStatus();
     }
 
     next() {
+        this.computeStatus();
+
         if(this.isAgainstRightWall) {
             return;
         }
@@ -51,6 +50,8 @@ export class Carousel {
     }
 
     previous() {
+        this.computeStatus();
+
         if(this.isAgainstLeftWall) {
             return;
         }
