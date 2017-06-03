@@ -1,5 +1,7 @@
 # Simple Carousel
 
+[![npm version](https://badge.fury.io/js/a-simple-carousel.svg)](https://badge.fury.io/js/a-simple-carousel)
+
 A vanilla JS, performant, accessible implementation of a carousel UI element.
 
 Major Features:
