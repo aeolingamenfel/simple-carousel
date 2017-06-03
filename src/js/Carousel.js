@@ -6,10 +6,16 @@ export class Carousel {
         this.children = this.tray.children;
         this.movementIncrement = config.movementIncrement || 100;
         this.movementUnit = config.movementUnit || "%";
+        this.movementMode = config.movementMode || "normal";
+        this.currentChildIndex = 0; // used only for movementMode == 'child-increment'
         this.currentMovement = 0;
         this.isAgainstLeftWall = false;
         this.isAgainstRightWall = false;
         this.isMoving = false;
+
+        if(this.movementMode === 'child-increment') {
+            this.movementUnit = "px";
+        }
 
         this.upgrade();
     }
@@ -37,6 +43,22 @@ export class Carousel {
         this.isMoving = false;
     }
 
+    computeAmountToMove(isGoingRight) {
+        if(this.movementMode === 'child-increment') {
+            var child = isGoingRight ? this.children[this.currentChildIndex] :
+                this.children[this.currentChildIndex - 1];
+            var childWidth = child.offsetWidth;
+
+            return this.currentMovement + ((isGoingRight ? 1 : -1) * childWidth);
+        } else {
+            if(isGoingRight) {
+                return this.currentMovement + this.movementIncrement;
+            } else {
+                return this.currentMovement - this.movementIncrement
+            }
+        }
+    }
+
     next() {
         this.computeStatus();
 
@@ -44,7 +66,11 @@ export class Carousel {
             return;
         }
 
-        var amountToMove = this.currentMovement + this.movementIncrement;
+        var amountToMove = this.computeAmountToMove(true);
+
+        if(this.movementMode === 'child-increment') {
+            this.currentChildIndex += 1;
+        }
 
         this.moveTo(amountToMove);
     }
@@ -56,7 +82,11 @@ export class Carousel {
             return;
         }
 
-        var amountToMove = this.currentMovement - this.movementIncrement;
+        var amountToMove = this.computeAmountToMove(false);
+
+        if(this.movementMode === 'child-increment') {
+            this.currentChildIndex -= 1;
+        }
 
         this.moveTo(amountToMove);
     }

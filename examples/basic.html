@@ -61,7 +61,8 @@
                 var nextButton = document.getElementById("next-button");
 
                 var carousel = SimpleCarousel.init({
-                    element: carouselElement
+                    element: carouselElement,
+                    movementMode: "child-increment"
                 });
 
                 prevButton.addEventListener("click", function(e) {
