@@ -44,18 +44,27 @@ export class Carousel {
     }
 
     computeAmountToMove(isGoingRight) {
-        if(this.movementMode === 'child-increment') {
-            var child = isGoingRight ? this.children[this.currentChildIndex] :
-                this.children[this.currentChildIndex - 1];
-            var childWidth = child.offsetWidth;
+        switch(this.movementMode) {
+            // Mode in which the carousel moves child-by-child
+            case "child-increment":
+                // determine index of the child who's width will be used for the
+                // next movement value
+                const nextIndex = isGoingRight ? this.currentChildIndex
+                    : this.currentChildIndex - 1;
 
-            return this.currentMovement + ((isGoingRight ? 1 : -1) * childWidth);
-        } else {
-            if(isGoingRight) {
-                return this.currentMovement + this.movementIncrement;
-            } else {
-                return this.currentMovement - this.movementIncrement
-            }
+                // if the nextIndex is out of bounds, don't do anything
+                if(nextIndex < 0 || nextIndex >= this.children.length) {
+                    return 0;
+                }
+
+                const child = this.children[nextIndex];
+                const childWidth = child.offsetWidth;
+
+                return this.currentMovement
+                    + ((isGoingRight ? 1 : -1) * childWidth);
+            default:
+                return this.currentMovement
+                    + ((isGoingRight ? 1 : -1) * this.movementIncrement);
         }
     }
 

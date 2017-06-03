@@ -18,7 +18,7 @@
         <link rel="stylesheet" type="text/css" href="/dist/css/SimpleCarousel.css" />
     </head>
     <body>
-        <div id="carousel" class="carousel">
+        <div id="child-carousel" class="carousel">
             <div class="tray">
                 <div class="carousel-element">
                     <h1 class="title">Hello, world</h1>
@@ -44,10 +44,47 @@
         </div>
         <div>
             <center>
-                <button id="prev-button">
+                <button id="child-prev-button">
                     &lt; Previous
                 </button>
-                <button id="next-button">
+                <button id="child-next-button">
+                    Next &gt;
+                </button>
+            </center>
+        </div>
+
+        <hr />
+
+        <div id="normal-carousel" class="carousel">
+            <div class="tray">
+                <div class="carousel-element">
+                    <h1 class="title">Hello, world</h1>
+                    <p>This is a carousel item</p>
+                </div>
+                <div class="carousel-element">
+                    <h1 class="title">Hello, world</h1>
+                    <p>This is a carousel item</p>
+                </div>
+                <div class="carousel-element">
+                    <h1 class="title">Hello, world</h1>
+                    <p>This is a carousel item</p>
+                </div>
+                <div class="carousel-element">
+                    <h1 class="title">Hello, world</h1>
+                    <p>This is a carousel item</p>
+                </div>
+                <div class="carousel-element">
+                    <h1 class="title">Hello, world</h1>
+                    <p>This is a carousel item</p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <center>
+                <button id="normal-prev-button">
+                    &lt; Previous
+                </button>
+                <button id="normal-next-button">
                     Next &gt;
                 </button>
             </center>
@@ -55,14 +92,10 @@
 
         <script src="/dist/js/SimpleCarousel.js"></script>
         <script type="text/javascript">
-            (function() {
-                var carouselElement = document.getElementById("carousel");
-                var prevButton = document.getElementById("prev-button");
-                var nextButton = document.getElementById("next-button");
-
+            function setupCarousel(element, prevButton, nextButton, movementMode) {
                 var carousel = SimpleCarousel.init({
-                    element: carouselElement,
-                    movementMode: "child-increment"
+                    element: element,
+                    movementMode: movementMode
                 });
 
                 prevButton.addEventListener("click", function(e) {
@@ -72,6 +105,19 @@
                 nextButton.addEventListener("click", function(e) {
                     carousel.next();
                 }, false);
+            }
+
+            (function() {
+                const childCarouselElement = document.getElementById("child-carousel");
+                const childPrevButton = document.getElementById("child-prev-button");
+                const childNextButton = document.getElementById("child-next-button");
+
+                const normalCarouselElement = document.getElementById("normal-carousel");
+                const normalPrevButton = document.getElementById("normal-prev-button");
+                const normalNextButton = document.getElementById("normal-next-button");
+
+                setupCarousel(childCarouselElement, childPrevButton, childNextButton, 'child-increment');
+                setupCarousel(normalCarouselElement, normalPrevButton, normalNextButton, 'normal');
             })();
         </script>
     </body>

@@ -19,6 +19,7 @@ Major Features:
  - [Options](#options)
    - [Element](#element)
    - [Selector](#selector)
+   - [Movement Mode](#movement-mode)
    - [Movement Increment](#movement-increment)
    - [Movement Unit](#movement-unit)
 
@@ -165,6 +166,31 @@ Key: `selector`
 
 The CSS selector specifying the element that the Carousel should connect to.
 Must be specified if no element selector is specified.
+
+### Movement Mode
+
+Required: No<br />
+Value: `String`<br />
+Default: `normal`<br />
+Key: `movementMode`
+
+Options: `(normal|child-increment)`
+
+Specifies the movement mode of the Carousel. These modes determine how the
+Carousel computes how much to move when the `next()` or `previous()` methods
+are called or it otherwise decides to move. See more information about the modes
+below.
+
+| Name | Key | Description |
+| --- | --- | --- |
+| Normal Mode | `normal` | This is the default mode. When active, causes the Carousel to move based on the
+set [Movement Increment](#movement-increment) and
+[Movement Unit](#movement-unit) options (or their defaults). |
+| Child Increment Mode | `child-increment` | When set, this mode causes the Carousel to ignore the
+[Movement Increment](#movement-increment) and [Movement Unit](#movement-unit)
+options, and instead move child-by-child. That is, that the Carousel will move
+based on each child's width. This is dynamically computed, so if children are
+different widths, or they change widths, that change will be accounted for. |
 
 ### Movement Increment
 
